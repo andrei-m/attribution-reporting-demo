@@ -13,8 +13,16 @@ Setup
 Chrome Privacy Sandbox APIs may only trust HTTPS resources. This example requires all resources are served over HTTPS. This can be achieved by configuring a browser to trust CA, or (more simply), using a domain name and [lego](https://go-acme.github.io/lego/) or a similar tool to create a certificate:
 
 1. Register a domain name, e.g. attribution-reporting-demo.com
-2. Obtain a .crt/.key pair for a wildcard subdomain cert (e.g. `*.attribution-reporting-demo.com`) using Lego or a similar tool and the registrar/DNS provider.
-3. Symlink the .crt/.key to `cert.crt` and `cert.key` in the root of this repo
-4. Add `attribution-reporting-demo.com` subdomains to /etc/hosts pointing to localhost
-5. Navigate to `attribution-reporting-demo.com` to access the demo
+1. Obtain a .crt/.key pair for a wildcard subdomain cert (e.g. `*.attribution-reporting-demo.com`) using Lego or a similar tool and the registrar/DNS provider.
+1. Symlink the .crt/.key to `cert.crt` and `cert.key` in the root of this repo
+1. Add `attribution-reporting-demo.com` subdomains to /etc/hosts pointing to localhost
 
+Run
+---
+
+1. `docker compose up --build`
+1. Navigate to `attribution-reporting-demo.com` to access the demo
+
+Paths so far:
+
+- /adtech - simulate an ad tech report collection server & other ad tech functions such as prompting the browser to register an attribution source.
